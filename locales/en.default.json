@@ -268,5 +268,17 @@
       "sold_out": "Sold out",
       "unavailable": "Unavailable"
     }
+  },
+  "settings": {
+    "section_height": "Section height",
+    "section_height_custom": "Custom height",
+    "section_height_custom_info": "Set a custom height for the section",
+    "section_height_options": {
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large",
+      "full_screen": "Full screen",
+      "custom": "Custom"
+    }
   }
 }
