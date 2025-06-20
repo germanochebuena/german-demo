@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "dynamic-hero",
+      "settings": {
+        "section_height": "medium",
+        "section_height_custom": 50,
+        "summer_heading": "Summer Collection 2024",
+        "summer_text": "<p>Discover our latest summer styles and enjoy the warm weather in comfort and style. Limited time offer!</p>",
+        "summer_button_label": "Shop Summer Collection",
+        "summer_button_link": "/collections/summer",
+        "demo_heading": "Welcome to Our Store",
+        "demo_text": "<p>Explore our amazing collection of products and find exactly what you're looking for. Start your shopping journey today!</p>",
+        "demo_button_label": "Shop Now",
+        "demo_button_link": "/collections/all"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+} 

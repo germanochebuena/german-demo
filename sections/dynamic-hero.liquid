@@ -1,0 +1,153 @@
+{% liquid
+  assign utm_campaign = request.query_string | split: 'utm_campaign=' | last | split: '&' | first
+  assign has_summer_campaign = false
+  
+  if utm_campaign contains 'summer'
+    assign has_summer_campaign = true
+  endif
+%}
+
+<div
+  id="DynamicHero-{{ section.id }}"
+  class="dynamic-hero section section--full-width"
+  style="
+    {% if section.settings.section_height == 'custom' %}
+      --hero-min-height: {{ section.settings.section_height_custom }}svh;
+    {% elsif section.settings.section_height == "full-screen" %}
+       --hero-min-height: 100svh;
+    {% else %}
+      --hero-min-height: var(--section-height-{{ section.settings.section_height }});
+    {% endif %}
+  "
+  {% if request.visual_preview_mode %}
+    data-shopify-visual-preview
+  {% endif %}
+>
+  {% if has_summer_campaign %}
+    {% render 'banner-summer', section: section %}
+  {% else %}
+    {% render 'banner-demo', section: section %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "t:names.dynamic_hero",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_height",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:settings.section_height.options.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:settings.section_height.options.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:settings.section_height.options.large"
+        },
+        {
+          "value": "full-screen",
+          "label": "t:settings.section_height.options.full_screen"
+        },
+        {
+          "value": "custom",
+          "label": "t:settings.section_height.options.custom"
+        }
+      ],
+      "default": "medium",
+      "label": "t:settings.section_height.label"
+    },
+    {
+      "type": "range",
+      "id": "section_height_custom",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "svh",
+      "label": "t:settings.section_height_custom.label",
+      "default": 50,
+      "info": "t:settings.section_height_custom.info"
+    },
+    {
+      "type": "header",
+      "content": "Summer Banner Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "summer_image",
+      "label": "Summer Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "summer_heading",
+      "label": "Summer Banner Heading",
+      "default": "Summer Collection"
+    },
+    {
+      "type": "richtext",
+      "id": "summer_text",
+      "label": "Summer Banner Text",
+      "default": "<p>Discover our latest summer styles and enjoy the warm weather in comfort and style.</p>"
+    },
+    {
+      "type": "text",
+      "id": "summer_button_label",
+      "label": "Summer Button Label",
+      "default": "Shop Summer Collection"
+    },
+    {
+      "type": "url",
+      "id": "summer_button_link",
+      "label": "Summer Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Demo Banner Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "demo_image",
+      "label": "Demo Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "demo_heading",
+      "label": "Demo Banner Heading",
+      "default": "Welcome to Our Store"
+    },
+    {
+      "type": "richtext",
+      "id": "demo_text",
+      "label": "Demo Banner Text",
+      "default": "<p>Explore our amazing collection of products and find exactly what you're looking for.</p>"
+    },
+    {
+      "type": "text",
+      "id": "demo_button_label",
+      "label": "Demo Button Label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "demo_button_link",
+      "label": "Demo Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.dynamic_hero"
+    }
+  ],
+  "category": "t:categories.banners"
+}
+{% endschema %}
