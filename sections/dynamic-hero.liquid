@@ -1,5 +1,17 @@
 {% liquid
-  assign utm_campaign = request.query_string | split: 'utm_campaign=' | last | split: '&' | first
+capture current_collection
+        render 'querystring', queryParam: 'collection' 
+    endcapture
+    capture current_product
+        render 'querystring', queryParam: 'product' 
+    endcapture
+    capture param_quantity
+        render 'querystring', queryParam: 'quantity' 
+    endcapture
+    capture param_utm_campaign
+        render 'querystring', queryParam: 'utm_campaign' 
+endcapture
+  assign utm_campaign = param_utm_campaign
   assign has_summer_campaign = false
   
   if utm_campaign contains 'summer'
@@ -9,7 +21,7 @@
 
 <div
   id="DynamicHero-{{ section.id }}"
-  class="dynamic-hero section section--full-width"
+  class="dynamic-hero section--full-width"
   style="
     {% if section.settings.section_height == 'custom' %}
       --hero-min-height: {{ section.settings.section_height_custom }}svh;
@@ -33,8 +45,6 @@
 {% schema %}
 {
   "name": "Dynamic Hero",
-  "tag": "section",
-  "class": "section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
