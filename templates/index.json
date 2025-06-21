@@ -343,6 +343,9 @@
           ]
         }
       },
+      "custom_css": [
+        ".section-background {background: #fff; background-image: url(https://cdn.shopify.com/s/files/1/0951/1285/5842/files/pexels-codioful-7135057.webp?v=1750537520); background-size: cover; background-position: 50% 50%; background-attachment: fixed;}"
+      ],
       "name": "Product list",
       "settings": {
         "collection": "snowboards",
