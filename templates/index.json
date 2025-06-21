@@ -17,12 +17,12 @@
         "section_height_custom": 70,
         "summer_image": "shopify://shop_images/pexels-codioful-6985001.webp",
         "summer_heading": "Summer Collection 2024",
-        "summer_text": "<p>Discover our latest summer styles and enjoy the warm weather in comfort and style. Limited time offer!</p>",
+        "summer_text": "<p>This is the version of the same section banner triggered by the query parameters logic. Useful for campaign parameter personalization. </p>",
         "summer_button_label": "Shop Summer Collection",
         "summer_button_link": "/collections/summer",
         "demo_image": "shopify://shop_images/pexels-codioful-7130470.webp",
         "demo_heading": "Welcome to Our Store",
-        "demo_text": "<p>Explore our amazing collection of products and find exactly what you're looking for. Start your shopping journey today!</p>",
+        "demo_text": "<p>This is a default banner that changes its contents based on the query parameters. Useful for campaign parameter personalization. </p>",
         "demo_button_label": "Shop Now",
         "demo_button_link": "/collections/all"
       }
