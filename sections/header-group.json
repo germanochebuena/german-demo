@@ -58,6 +58,9 @@
           "blocks": {}
         }
       },
+      "custom_css": [
+        ".header__row {background: linear-gradient(275deg, #fc1783, #fd917a, #fcdb66) !important;}"
+      ],
       "settings": {
         "logo_position": "left",
         "menu_position": "left",
