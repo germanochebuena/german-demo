@@ -9,24 +9,6 @@
  */
 {
   "sections": {
-    "dynamic_hero_demo": {
-      "type": "dynamic-hero",
-      "name": "t:names.dynamic_hero",
-      "settings": {
-        "section_height": "large",
-        "section_height_custom": 70,
-        "summer_image": "shopify://shop_images/pexels-codioful-6985001.webp",
-        "summer_heading": "Summer Collection 2024",
-        "summer_text": "<p>This is the version of the same section banner triggered by the query parameters logic. Useful for campaign parameter personalization. </p>",
-        "summer_button_label": "Shop Summer Collection",
-        "summer_button_link": "/collections/summer",
-        "demo_image": "shopify://shop_images/pexels-codioful-7130470.webp",
-        "demo_heading": "Welcome to Our Store",
-        "demo_text": "<p>This is a default banner that changes its contents based on the query parameters. Useful for campaign parameter personalization. </p>",
-        "demo_button_label": "Shop Now",
-        "demo_button_link": "/collections/all"
-      }
-    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -76,7 +58,6 @@
         "text_YLPk4p",
         "button_H9gpTf"
       ],
-      "disabled": true,
       "name": "t:names.hero",
       "settings": {
         "link": "",
@@ -103,6 +84,24 @@
         "reflection_opacity": 75,
         "padding-block-start": 100,
         "padding-block-end": 48
+      }
+    },
+    "dynamic_hero_demo": {
+      "type": "dynamic-hero",
+      "name": "t:names.dynamic_hero",
+      "settings": {
+        "section_height": "large",
+        "section_height_custom": 70,
+        "summer_image": "shopify://shop_images/pexels-codioful-6985001.webp",
+        "summer_heading": "Query Params Banner",
+        "summer_text": "<p>This is the version of the same section banner triggered by the query parameters logic. Useful for campaign parameter personalization. </p>",
+        "summer_button_label": "Shop Summer Collection",
+        "summer_button_link": "/collections/summer",
+        "demo_image": "shopify://shop_images/pexels-codioful-7130470.webp",
+        "demo_heading": "Default Banner No Params",
+        "demo_text": "<p>This is a default banner that changes its contents based on the query parameters. Useful for campaign parameter personalization. </p>",
+        "demo_button_label": "Shop Now",
+        "demo_button_link": "/collections/all"
       }
     },
     "product_list_qU3bEB": {
@@ -368,8 +367,8 @@
     }
   },
   "order": [
-    "dynamic_hero_demo",
     "hero_jVaWmY",
+    "dynamic_hero_demo",
     "product_list_qU3bEB"
   ]
 }
