@@ -122,8 +122,8 @@
       ],
       "name": "t:names.marquee_section",
       "settings": {
-        "movement_direction": "normal",
-        "color_scheme": "",
+        "movement_direction": "reverse",
+        "color_scheme": "scheme-5",
         "padding-block-start": 24,
         "padding-block-end": 24,
         "gap_between_elements": 24
