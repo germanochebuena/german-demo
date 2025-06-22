@@ -120,12 +120,15 @@
       "block_order": [
         "text_P63PRA"
       ],
+      "custom_css": [
+        "marquee-component {background: linear-gradient(45deg, #fe149a, #7a5bd3, #22a4f1);}"
+      ],
       "name": "t:names.marquee_section",
       "settings": {
         "movement_direction": "reverse",
         "color_scheme": "scheme-5",
-        "padding-block-start": 24,
-        "padding-block-end": 24,
+        "padding-block-start": 15,
+        "padding-block-end": 15,
         "gap_between_elements": 24
       }
     },
