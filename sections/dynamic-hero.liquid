@@ -1,24 +1,3 @@
-{% liquid
-capture current_collection
-        render 'querystring', queryParam: 'collection' 
-    endcapture
-    capture current_product
-        render 'querystring', queryParam: 'product' 
-    endcapture
-    capture param_quantity
-        render 'querystring', queryParam: 'quantity' 
-    endcapture
-    capture param_utm_campaign
-        render 'querystring', queryParam: 'utm_campaign' 
-endcapture
-  assign utm_campaign = param_utm_campaign
-  assign has_summer_campaign = false
-  
-  if utm_campaign contains 'summer'
-    assign has_summer_campaign = true
-  endif
-%}
-
 <div
   id="DynamicHero-{{ section.id }}"
   class="dynamic-hero section--full-width"
@@ -35,12 +14,34 @@ endcapture
     data-shopify-visual-preview
   {% endif %}
 >
-  {% if has_summer_campaign %}
+  <template data-banner="summer">
     {% render 'banner-summer', section: section %}
-  {% else %}
+  </template>
+  <template data-banner="demo">
     {% render 'banner-demo', section: section %}
-  {% endif %}
+  </template>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const heroSection = document.getElementById('DynamicHero-{{ section.id }}');
+    if (!heroSection) return;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmCampaign = urlParams.get('utm_campaign') || '';
+
+    let bannerToShow = 'demo';
+    if (utmCampaign.includes('summer')) {
+      bannerToShow = 'summer';
+    }
+
+    const template = heroSection.querySelector(`template[data-banner="${bannerToShow}"]`);
+    if (template) {
+      const content = template.content.cloneNode(true);
+      heroSection.appendChild(content);
+    }
+  });
+</script>
 
 {% schema %}
 {
