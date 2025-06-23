@@ -59,7 +59,7 @@
         }
       },
       "custom_css": [
-        ".header__row {background: linear-gradient(275deg, #fc1783, #fd917a, #fcdb66) !important;}"
+        ".header__row {background: linear-gradient( 0deg, #fc1783 10%, #fd917a 10% ) !important;}"
       ],
       "settings": {
         "logo_position": "left",
