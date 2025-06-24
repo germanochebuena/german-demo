@@ -195,13 +195,13 @@
         "summer_image": "shopify://shop_images/pexels-codioful-6985001.webp",
         "summer_heading": "Query Params Banner",
         "summer_text": "<p>This is the version of the same section banner triggered by the query parameters logic. Useful for campaign parameter personalization. </p>",
-        "summer_button_label": "Shop Summer Collection",
-        "summer_button_link": "/collections/summer",
+        "summer_button_label": "Switch Banner",
+        "summer_button_link": "/",
         "demo_image": "shopify://shop_images/pexels-codioful-7130470.webp",
         "demo_heading": "Default Banner No Params",
         "demo_text": "<p>This is a default banner that changes its contents based on the query parameters. Useful for campaign parameter personalization. </p>",
-        "demo_button_label": "Shop Now",
-        "demo_button_link": "/collections/all"
+        "demo_button_label": "Switch Banner",
+        "demo_button_link": "https://german-demo.myshopify.com/?utm_campaign=summer_ads"
       }
     },
     "product_list_qU3bEB": {
