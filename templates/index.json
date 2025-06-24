@@ -194,7 +194,7 @@
         "section_height_custom": 70,
         "summer_image": "shopify://shop_images/pexels-codioful-6985001.webp",
         "summer_heading": "Query Params Banner",
-        "summer_text": "<p>This is the version of the same section banner triggered by the query parameters logic. Useful for campaign parameter personalization. </p>",
+        "summer_text": "<p><strong>Look at the URL!</strong><br/>This is the version of the same section banner triggered by the query parameters logic. Useful for campaign parameter personalization. </p>",
         "summer_button_label": "Switch Banner",
         "summer_button_link": "/",
         "demo_image": "shopify://shop_images/pexels-codioful-7130470.webp",
