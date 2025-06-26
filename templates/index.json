@@ -9,6 +9,24 @@
  */
 {
   "sections": {
+    "dynamic_hero_demo": {
+      "type": "dynamic-hero",
+      "name": "t:names.dynamic_hero",
+      "settings": {
+        "section_height": "large",
+        "section_height_custom": 70,
+        "summer_image": "shopify://shop_images/pexels-codioful-6985001.webp",
+        "summer_heading": "Query Params Banner",
+        "summer_text": "<p><strong>Look at the URL!</strong><br/>This is the version of the same section banner triggered by the query parameters logic. Useful for campaign parameter personalization. </p>",
+        "summer_button_label": "Switch Banner",
+        "summer_button_link": "/",
+        "demo_image": "shopify://shop_images/pexels-codioful-7130470.webp",
+        "demo_heading": "Default Banner No Params",
+        "demo_text": "<p>This is a default banner that changes its contents based on the query parameters. Useful for campaign parameter personalization. </p>",
+        "demo_button_label": "Switch Banner",
+        "demo_button_link": "https://german-demo.myshopify.com/?utm_campaign=summer_ads"
+      }
+    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -59,6 +77,7 @@
         "text_YLPk4p",
         "button_H9gpTf"
       ],
+      "disabled": true,
       "name": "t:names.hero",
       "settings": {
         "link": "",
@@ -186,22 +205,106 @@
         "gap_between_elements": 24
       }
     },
-    "dynamic_hero_demo": {
-      "type": "dynamic-hero",
-      "name": "t:names.dynamic_hero",
+    "featured_product_MpRifV": {
+      "type": "featured-product",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "name": "t:names.product_media",
+          "static": true,
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/pexels-freestockpro-376697.webp",
+            "link": "",
+            "video_loop": true,
+            "video_autoplay": false,
+            "image_position": "cover",
+            "video_position": "cover"
+          },
+          "blocks": {}
+        },
+        "featured-product": {
+          "type": "_featured-product",
+          "name": "t:names.product",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "featured-product-title": {
+              "type": "product-title",
+              "name": "t:names.title",
+              "static": true,
+              "settings": {
+                "product": "{{ closest.product }}",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h5",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "featured-product-price": {
+              "type": "_featured-product-price",
+              "name": "t:names.price",
+              "static": true,
+              "settings": {
+                "product": "{{ closest.product }}",
+                "show_sale_price_first": true,
+                "type_preset": ""
+              },
+              "blocks": {}
+            },
+            "featured-product-gallery": {
+              "type": "_featured-product-gallery",
+              "name": "t:names.image",
+              "static": true,
+              "settings": {
+                "product": "{{ closest.product }}",
+                "image_ratio": "square",
+                "constrain_to_viewport": "contain"
+              },
+              "blocks": {}
+            },
+            "featured-product-swatches": {
+              "type": "swatches",
+              "name": "t:names.swatches",
+              "static": true,
+              "settings": {
+                "product": "{{ closest.product }}",
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": true,
+                "product_swatches_padding_top": 4,
+                "product_swatches_padding_bottom": 0,
+                "product_swatches_padding_left": 0,
+                "product_swatches_padding_right": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
+        }
+      },
+      "name": "t:names.featured_product",
       "settings": {
-        "section_height": "large",
-        "section_height_custom": 70,
-        "summer_image": "shopify://shop_images/pexels-codioful-6985001.webp",
-        "summer_heading": "Query Params Banner",
-        "summer_text": "<p><strong>Look at the URL!</strong><br/>This is the version of the same section banner triggered by the query parameters logic. Useful for campaign parameter personalization. </p>",
-        "summer_button_label": "Switch Banner",
-        "summer_button_link": "/",
-        "demo_image": "shopify://shop_images/pexels-codioful-7130470.webp",
-        "demo_heading": "Default Banner No Params",
-        "demo_text": "<p>This is a default banner that changes its contents based on the query parameters. Useful for campaign parameter personalization. </p>",
-        "demo_button_label": "Switch Banner",
-        "demo_button_link": "https://german-demo.myshopify.com/?utm_campaign=summer_ads"
+        "product": "the-complete-snowboard",
+        "layout": "media-left",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "product_list_qU3bEB": {
@@ -467,9 +570,10 @@
     }
   },
   "order": [
+    "dynamic_hero_demo",
     "hero_jVaWmY",
     "marquee_iYPcEA",
-    "dynamic_hero_demo",
+    "featured_product_MpRifV",
     "product_list_qU3bEB"
   ]
 }
