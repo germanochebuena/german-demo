@@ -29,7 +29,7 @@
             "wrap": "pretty",
             "color": "var(--color-foreground)",
             "background": true,
-            "background_color": "#2ec1cf7e",
+            "background_color": "#2ec1cf7d",
             "corner_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
