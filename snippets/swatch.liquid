@@ -4,14 +4,17 @@
   @param {object} swatch - a swatch object
   @param {object} [variant_image] - an alternate image
   @param {string} [mode] - one of 'unscaled' or 'filter'
+  @param {string} [custom_color] - a custom color value to override swatch color
 
   @example
-  {% render 'swatch', swatch: swatch, variant_image: variant_image, mode: 'unscaled' %}
+  {% render 'swatch', swatch: swatch, variant_image: variant_image, mode: 'unscaled', custom_color: '#ff0000' %}
 {%- enddoc -%}
 
 {% liquid
   assign swatch_value = null
-  if settings.show_variant_image and variant_image
+  if custom_color != blank
+    assign swatch_value = custom_color
+  elsif settings.show_variant_image and variant_image
     assign swatch_image_width = settings.variant_swatch_width | times: 2
     assign swatch_image_url = variant_image | image_url: width: swatch_image_width
     assign swatch_value = 'url(' | append: swatch_image_url | append: ')'

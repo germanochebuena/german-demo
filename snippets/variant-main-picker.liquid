@@ -65,7 +65,20 @@
               {% if product_option_value.size > longest_value and option_id_attribute %}
                 {% assign longest_value = product_option_value.size %}
               {% endif %}
-              <label class="variant-option__button-label{% if variant_style == 'swatch' %} variant-option__button-label--has-swatch{% endif %}">
+              {% liquid
+                # Check if variant option value name matches any color name in metaobject
+                assign matched_color_value = null
+                for color_metaobject in shop.metaobjects.colors.values
+                  if color_metaobject.name == product_option_value.name
+                    assign matched_color_value = color_metaobject.value.value
+                    break
+                  endif
+                endfor
+              %}
+              <label 
+                class="variant-option__button-label{% if variant_style == 'swatch' %} variant-option__button-label--has-swatch{% endif %}"
+                {% if matched_color_value %}style="background-color: {{ matched_color_value }};"{% endif %} data-name="{{ product_option_value.name }}"
+              >
                 <input
                   type="radio"
                   name="{{ product_option.name | escape }}-{{ block.id }}-{{ product_resource.id }}"

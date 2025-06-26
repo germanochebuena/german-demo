@@ -22,7 +22,7 @@
         {% continue %}
       {% endif %}
 
-      <fieldset class="variant-option variant-option--buttons variant-option--swatches">
+      <fieldset class="variant-option variant-option--buttons variant-option--swatches" {% if matched_color_value %}style="background-color: {{ matched_color_value }};"{% endif %}>
         {% capture children %}
         {%- for product_option_value in product_option.values -%}
           {% liquid
@@ -33,6 +33,15 @@
             if featured_media == blank and product_option_value.product_url
               assign featured_media = product_option_value.variant.product.featured_media
             endif
+
+            # Check if variant option value name matches any color name in metaobject
+            assign matched_color_value = null
+            for color_metaobject in shop.metaobjects['color'].values
+              if color_metaobject.name == product_option_value.name
+                assign matched_color_value = color_metaobject.value.value
+                break
+              endif
+            endfor
           %}
 
           <li class="variant-option__swatch">
@@ -41,6 +50,7 @@
               class="variant-option__button-label variant-option__button-label--has-swatch"
               on:pointerenter="product-card/previewVariant/{{ featured_media.id }}"
               on:pointerleave="product-card/resetVariant"
+              {% if matched_color_value %}style="background-color: {{ matched_color_value }};"{% endif %}
             >
               <input
                 type="radio"
